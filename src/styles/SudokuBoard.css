@@ -1,0 +1,48 @@
+.SudokuBoard {
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    transform: translateY(50%);
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    --border-width: 7px;
+}
+
+
+.SudokuBoard .row {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Boarder */
+.SudokuBoard .row:nth-child(3) .Cell,
+.SudokuBoard .row:nth-child(6) .Cell {
+    border-bottom-width: 3px;
+}
+
+.SudokuBoard .row .Cell:nth-child(3),
+.SudokuBoard .row .Cell:nth-child(6) {
+    border-right-width: 3px;
+}
+
+.SudokuBoard .row:nth-child(1) .Cell {
+    border-top-width: var(--border-width);
+}
+
+.SudokuBoard .row:nth-child(9) .Cell {
+    border-bottom-width: var(--border-width);
+}
+
+.SudokuBoard .row .Cell:nth-child(9) {
+    border-right-width: var(--border-width);
+}
+
+.SudokuBoard .row .Cell:nth-child(1) {
+    border-left-width: var(--border-width);
+}

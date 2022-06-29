@@ -1,0 +1,10 @@
+.Cell {
+    border-style: solid;
+    border-width: 1px;
+
+    flex: 1;
+}
+
+.Cell.active {
+    background-color: green;
+}
