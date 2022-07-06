@@ -6,5 +6,18 @@
 }
 
 .Cell.active {
-    background-color: green;
+    animation-name: active;
+    animation-duration: 0.6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes active {
+    0% {
+        background-color: none;
+    }
+
+    100% {
+        background-color: rgb(212, 211, 211);
+    }
 }
