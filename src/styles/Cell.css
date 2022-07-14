@@ -3,6 +3,16 @@
     border-width: 1px;
 
     flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cell>p {
+    margin: 0;
+
+    font-size: 40px;
 }
 
 .Cell.active {

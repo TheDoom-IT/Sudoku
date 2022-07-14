@@ -3,10 +3,13 @@ import { useState } from 'react'
 import '../styles/SudokuBoard.css'
 import { Cell } from './Cell'
 import { Keyboard } from './Keyboard'
-import { SudokuBoardState, Coordinates, KeyboardState } from './types'
+import { ActiveCellState, BoardState, Coordinates, KeyboardState } from './types'
+
+const emptyBoard: (number | undefined)[][] = Array(9).fill(Array(9).fill(undefined))
 
 export function SudokuBoard() {
-  const [activeCell, setActiveCell] = useState<SudokuBoardState>({ keyboardPosition: { x: 0, y: 0 }, keyboardState: KeyboardState.HIDDEN })
+  const [board, setBoard] = useState<BoardState>(emptyBoard)
+  const [activeCell, setActiveCell] = useState<ActiveCellState>({ keyboardPosition: { x: 0, y: 0 }, keyboardState: KeyboardState.HIDDEN })
 
   const isActive = (cords: Coordinates) => {
     return activeCell.cords?.x === cords.x && activeCell.cords?.y === cords.y
@@ -20,8 +23,12 @@ export function SudokuBoard() {
   }
 
   const onKeyboardClick = (digit: number) => {
-    console.log(digit)
-    // TODO: handle the keyboard click
+    if (!activeCell.cords)
+      return;
+
+    const newBoard = JSON.parse(JSON.stringify(board));
+    newBoard[activeCell.cords.x][activeCell.cords.y] = digit;
+    setBoard(newBoard)
   }
 
 
@@ -30,7 +37,7 @@ export function SudokuBoard() {
     let row: JSX.Element[] = []
 
     for (let x = 0; x < 9; x++) {
-      row.push(<Cell active={isActive({ x, y })} cords={{ x, y }} onClick={onCellClick} key={`${x}${y}`} ></Cell >)
+      row.push(<Cell value={board[x][y]} active={isActive({ x, y })} cords={{ x, y }} onClick={onCellClick} key={`${x}${y}`} ></Cell >)
     }
     cells.push(<div className='row' key={y}>{row}</div>)
   }

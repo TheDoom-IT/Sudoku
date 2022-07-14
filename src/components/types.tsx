@@ -10,8 +10,10 @@ export enum KeyboardState {
     SHIFT
 }
 
-export interface SudokuBoardState {
+export interface ActiveCellState {
     cords?: Coordinates
     keyboardPosition: Coordinates
     keyboardState: KeyboardState
 }
+
+export type BoardState = (number | undefined)[][];

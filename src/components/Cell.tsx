@@ -5,6 +5,7 @@ import { Coordinates } from './types';
 
 export interface CellProprs {
   cords: Coordinates;
+  value: number | undefined;
   onClick: (cords: Coordinates, position: Coordinates) => void
   active: boolean
 }
@@ -21,5 +22,7 @@ export function Cell(props: CellProprs) {
   }
 
 
-  return <div ref={cell} className={"Cell " + (props.active ? "active" : "")} onClick={onClick}></div >
+  return <div ref={cell} className={"Cell " + (props.active ? "active" : "")} onClick={onClick}>
+    <p>{props.value}</p>
+  </div>
 }
