@@ -1,11 +1,19 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { SudokuBoard } from './components/SudokuBoard';
+import { ROUTES } from './routes/constants';
+import { Home } from './routes/home';
+import { NotFound } from './routes/not-found';
+import { Play } from './routes/play';
 
 function App() {
   return (
     <div className="App">
-      <SudokuBoard></SudokuBoard>
+      <Routes>
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.PLAY} element={<Play />} />
+        <Route path={ROUTES.OTHER} element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

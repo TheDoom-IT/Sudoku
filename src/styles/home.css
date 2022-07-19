@@ -1,0 +1,20 @@
+.home {
+    padding-top: 20px;
+}
+
+.home h1 {
+    text-align: center;
+
+    font-size: 4rem;
+}
+
+.home .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .button-container .button {
+    width: 100px;
+    height: 50px;
+}
