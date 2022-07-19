@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react'
-import '../styles/SudokuBoard.css'
-import { Cell } from './Cell'
-import { Keyboard } from './Keyboard'
+import '../styles/sudoku-board.css'
+import { Cell } from './cell'
+import { Keyboard } from './keyboard'
 import { ActiveCellState, BoardState, Coordinates, KeyboardState } from './types'
 
 const emptyBoard: (number | undefined)[][] = Array(9).fill(Array(9).fill(undefined))

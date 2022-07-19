@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef } from 'react';
-import '../styles/Cell.css'
+import '../styles/cell.css'
 import { Coordinates } from './types';
 
 export interface CellProprs {

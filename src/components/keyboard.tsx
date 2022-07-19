@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import '../styles/Keyboard.css'
+import '../styles/keyboard.css'
 import { Coordinates, KeyboardState } from './types';
 
 export interface KeyboardProps {
