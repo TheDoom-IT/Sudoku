@@ -1,0 +1,41 @@
+.DifficultyPicker {
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+}
+
+.DifficultyPicker .options-holder {
+    width: 300px;
+
+    position: relative;
+}
+
+.DifficultyPicker .option {
+    width: 100px;
+
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+    transition: transform 500ms;
+}
+
+.DifficultyPicker .option.active {
+    background-color: green;
+    transform: translateX(0%);
+}
+
+.DifficultyPicker .option.innactive-left {
+    transform: translateX(-100%);
+}
+
+.DifficultyPicker .option.innactive-right {
+    transform: translateX(100%);
+}
+
+.DifficultyPicker .option.hidden {
+    visibility: hidden;
+}
