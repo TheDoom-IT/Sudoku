@@ -1,8 +1,8 @@
 .DifficultyPicker {
-    background-color: white;
-
     display: flex;
     justify-content: center;
+
+    height: 100px;
 }
 
 .DifficultyPicker .options-holder {
@@ -20,20 +20,42 @@
     left: 0;
     right: 0;
 
-    transition: transform 500ms;
+    text-align: center;
+    font-size: 1.5rem;
+
+    transition: transform 0.5s, visibility 0.5s, opacity 0.5s;
+
+    --inactive-scale: 0.5;
+    --inactive-translate: 150%;
 }
 
 .DifficultyPicker .option.active {
-    background-color: green;
     transform: translateX(0%);
 }
 
-.DifficultyPicker .option.innactive-left {
-    transform: translateX(-100%);
+.DifficultyPicker .option.innactive {
+    opacity: 0.5;
 }
 
-.DifficultyPicker .option.innactive-right {
-    transform: translateX(100%);
+.DifficultyPicker .option.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.DifficultyPicker .option.innactive.left {
+    transform: scaleX(var(--inactive-scale)) translateX(calc(var(--inactive-translate) * -1));
+}
+
+.DifficultyPicker .option.hidden.left {
+    transform: scaleX(0) translateX(-500%);
+}
+
+.DifficultyPicker .option.innactive.right {
+    transform: scaleX(var(--inactive-scale)) translateX(var(--inactive-translate));
+}
+
+.DifficultyPicker .option.hidden.right {
+    transform: scaleX(0) translateX(500%);
 }
 
 .DifficultyPicker .option.hidden {

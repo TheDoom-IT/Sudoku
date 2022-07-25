@@ -15,6 +15,10 @@
     flex-direction: row;
 }
 
+.SudokuBoard .Cell.initial {
+    background-color: rgba(245, 218, 167, 0.3);
+}
+
 /* Boarder */
 .SudokuBoard .row:nth-child(3) .Cell,
 .SudokuBoard .row:nth-child(6) .Cell {

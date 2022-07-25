@@ -15,26 +15,20 @@ export interface DifficultyPickerProps {
 
 export function DifficultyPicker(props: DifficultyPickerProps) {
     const higherDifficulty = () => {
-        switch (props.difficulty) {
-            case DIFFICULTY.EASY:
-                props.onDifficultyChange(DIFFICULTY.MEDIUM);
-                break;
-            case DIFFICULTY.MEDIUM:
-                props.onDifficultyChange(DIFFICULTY.HARD);
-                break;
-            default:
+        const diffs = Object.values(DIFFICULTY);
+        const currDiff = diffs.findIndex(diff => diff === props.difficulty);
+        if (currDiff < diffs.length - 1) {
+            const newDiff = diffs[currDiff + 1];
+            props.onDifficultyChange(newDiff);
         }
     }
 
     const lowerDifficulty = () => {
-        switch (props.difficulty) {
-            case DIFFICULTY.HARD:
-                props.onDifficultyChange(DIFFICULTY.MEDIUM);
-                break;
-            case DIFFICULTY.MEDIUM:
-                props.onDifficultyChange(DIFFICULTY.EASY);
-                break;
-            default:
+        const diffs = Object.values(DIFFICULTY);
+        const currDiff = diffs.findIndex(diff => diff === props.difficulty);
+        if (currDiff > 0) {
+            const newDiff = diffs[currDiff - 1];
+            props.onDifficultyChange(newDiff);
         }
     }
 
@@ -65,10 +59,16 @@ function classNameForOption(option: DIFFICULTY, currDiff: DIFFICULTY): string {
     const currIndex = diffs.findIndex((el) => el === currDiff);
     const optionIndex = diffs.findIndex(el => el === option)
     if (optionIndex + 1 === currIndex)
-        return "innactive-left"
+        return "innactive left"
+
+    if (optionIndex + 2 === currIndex)
+        return "hidden left"
 
     if (optionIndex - 1 === currIndex)
-        return "innactive-right"
+        return "innactive right"
+
+    if (optionIndex - 2 === currIndex)
+        return "hidden right"
 
     return "hidden"
 }

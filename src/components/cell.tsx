@@ -7,7 +7,8 @@ export interface CellProprs {
   cords: Coordinates;
   value: number | undefined;
   onClick: (cords: Coordinates, position: Coordinates) => void
-  active: boolean
+  active: boolean;
+  initial: boolean;
 }
 
 export function Cell(props: CellProprs) {
@@ -21,8 +22,11 @@ export function Cell(props: CellProprs) {
     props.onClick(props.cords, { x: position.right, y: position.top })
   }
 
+  let className = "Cell";
+  className = className + (props.active ? " active" : "")
+  className = className + (props.initial ? " initial" : "")
 
-  return <div ref={cell} className={"Cell " + (props.active ? "active" : "")} onClick={onClick}>
+  return <div ref={cell} className={className} onClick={onClick}>
     <p>{props.value}</p>
   </div>
 }
