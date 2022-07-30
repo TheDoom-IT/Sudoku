@@ -1,6 +1,8 @@
 import React from "react"
 import "../../styles/difficulty-picker.css"
+import { Button } from "../button";
 import { Option } from "./option";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 export enum DIFFICULTY {
     EASY = "easy",
@@ -33,9 +35,9 @@ export function DifficultyPicker(props: DifficultyPickerProps) {
     }
 
     return <div className="DifficultyPicker">
-        <button onClick={lowerDifficulty} disabled={props.difficulty === DIFFICULTY.EASY}>
-            left
-        </button>
+        <Button onClick={lowerDifficulty} disabled={props.difficulty === DIFFICULTY.EASY}>
+            <AiOutlineArrowLeft />
+        </Button>
 
         <div className="options-holder">
             {Object.values(DIFFICULTY).map(
@@ -44,9 +46,9 @@ export function DifficultyPicker(props: DifficultyPickerProps) {
             )}
         </div>
 
-        <button onClick={higherDifficulty} disabled={props.difficulty === DIFFICULTY.HARD}>
-            right
-        </button>
+        <Button onClick={higherDifficulty} disabled={props.difficulty === DIFFICULTY.HARD}>
+            <AiOutlineArrowRight />
+        </Button>
     </div>
 }
 

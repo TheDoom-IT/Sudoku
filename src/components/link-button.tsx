@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"
+import { Button } from "./button";
 
 export interface LinkButtonProps {
     to: string;
@@ -14,7 +15,7 @@ export function LinkButton(props: LinkButtonProps) {
         navigate(props.to);
     }
 
-    return <button className={props.className} onClick={onClick}>
+    return <Button onClick={onClick}>
         {props.children}
-    </button>
+    </Button>
 }
