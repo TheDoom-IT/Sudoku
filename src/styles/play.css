@@ -8,6 +8,19 @@
     flex-direction: column;
 }
 
-.play .button {
+.play .home-button {
     margin-top: 15px;
+}
+
+.play .message {
+    font-size: 30px;
+}
+
+.play .board-container {
+    display: flex;
+
+    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }

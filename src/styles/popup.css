@@ -1,0 +1,47 @@
+.popup {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: lightgray;
+
+    background-color: gray;
+
+    width: 400px;
+    height: fit-content;
+
+    position: fixed;
+
+    inset: 0;
+    margin: auto;
+
+    padding: 10px;
+
+    transition: opacity 0.4s, visibility 0.4s;
+}
+
+.popup .divider {
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+
+    margin: 10px 0;
+}
+
+.popup .header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup .message {
+    margin-top: 10px;
+    padding: 5px;
+    margin-bottom: 15px;
+
+    font-size: 1.4rem;
+}
+
+.popup .buttons {
+    display: flex;
+    justify-content: space-around;
+}
