@@ -12,7 +12,7 @@ export function Option(props: OptionProps) {
     const className = "option " + props.className;
 
     return <div className={className}>
-        <p>{props.diff}</p>
+        <p>{props.diff.toUpperCase()}</p>
     </div>
 }
 

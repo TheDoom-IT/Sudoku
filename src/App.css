@@ -1,5 +1,6 @@
 .App {
-    background-color: gray;
+    height: 100%;
 
-    height: 100vh;
+    min-height: 500px;
+    min-width: 800px;
 }

@@ -2,17 +2,16 @@
     display: flex;
     justify-content: center;
 
-    height: 100px;
 }
 
 .DifficultyPicker .options-holder {
-    width: 300px;
+    width: 400px;
 
     position: relative;
 }
 
 .DifficultyPicker .option {
-    width: 100px;
+    width: 133px;
 
     position: absolute;
     margin-left: auto;
@@ -21,12 +20,16 @@
     right: 0;
 
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
 
     transition: transform 0.5s, visibility 0.5s, opacity 0.5s;
 
     --inactive-scale: 0.5;
     --inactive-translate: 150%;
+}
+
+.DifficultyPicker .option p {
+    margin: 0;
 }
 
 .DifficultyPicker .option.active {
