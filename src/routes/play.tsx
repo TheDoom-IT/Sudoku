@@ -53,7 +53,7 @@ export function Play() {
         setBoard(newBoard);
     }
 
-    const popup: JSX.Element = !isCorrect ?
+    const popup: JSX.Element = isCorrect ?
         <WonGamePopup visible={showPopup} hide={() => setShowPopup(false)} /> :
         <InvalidSolutionPopup visible={showPopup} hide={() => setShowPopup(false)} />;
 

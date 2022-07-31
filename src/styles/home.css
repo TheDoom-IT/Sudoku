@@ -1,11 +1,24 @@
 .home {
-    padding-top: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 .home h1 {
     text-align: center;
 
     font-size: 4rem;
+
+    margin: 0;
+    padding-top: 20px;
+}
+
+.home .body {
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .home .button-container {

@@ -14,9 +14,11 @@ export function Home() {
 
     return <div className='home'>
         <h1>SUDOKU</h1>
-        <DifficultyPicker onDifficultyChange={onDifficultyChange} difficulty={difficulty} />
-        <div className='button-container'>
-            <LinkButton className='button' to={PLAY_LINK(difficulty)} ><FiPlay />PLAY</LinkButton>
+        <div className='body'>
+            <DifficultyPicker onDifficultyChange={onDifficultyChange} difficulty={difficulty} />
+            <div className='button-container'>
+                <LinkButton className='button' to={PLAY_LINK(difficulty)} ><FiPlay />PLAY</LinkButton>
+            </div>
         </div>
     </div >
 }
