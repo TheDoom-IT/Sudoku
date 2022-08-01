@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useRef } from 'react';
 import '../styles/keyboard.css'
 import { Coordinates, KeyboardState } from './types';
 
@@ -9,9 +9,27 @@ export interface KeyboardProps {
 }
 
 export function Keyboard(props: KeyboardProps) {
-    const style: CSSProperties = {
-        left: props.position.x,
-        top: props.position.y,
+    const keyboard = useRef<HTMLDivElement>(null);
+
+    const calculatePosition: () => CSSProperties = () => {
+        if (!keyboard.current)
+            return {};
+
+        const { height, width } = keyboard.current.getBoundingClientRect();
+
+        let left = props.position.x;
+        let top = props.position.y;
+
+        // shift the keyboard if it overflows
+        if (left + width > window.innerWidth) {
+            left = left - width;
+        }
+
+        if (top + height > window.innerHeight) {
+            top = top - height;
+        }
+
+        return { left, top };
     }
 
     const className = 'Keyboard ' + classNameFromState(props.state)
@@ -28,7 +46,7 @@ export function Keyboard(props: KeyboardProps) {
         digits.push(<div className='row' key={y}>{row}</div>)
     }
 
-    return <div style={style} className={className}>
+    return <div ref={keyboard} style={calculatePosition()} className={className}>
         {digits}
     </div>
 }

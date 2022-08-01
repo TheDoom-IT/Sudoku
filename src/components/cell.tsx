@@ -19,7 +19,7 @@ export function Cell(props: CellProprs) {
       return;
 
     const position = cell.current.getBoundingClientRect()
-    props.onClick(props.cords, { x: position.right, y: position.top })
+    props.onClick(props.cords, { x: position.right, y: position.bottom })
   }
 
   let className = "Cell";
