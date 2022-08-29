@@ -1,6 +1,6 @@
 # Sudoku
 
-Web version of the popular sudoku game. \
+Web version of the popular sudoku game.
 
 Uses sudoku API: https://github.com/bertoort/sugoku.
 
