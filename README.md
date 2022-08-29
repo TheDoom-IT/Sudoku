@@ -2,7 +2,7 @@
 
 Web version of the popular sudoku game.
 
-Uses sudoku API: https://github.com/bertoort/sugoku.
+Uses sugoku API: https://github.com/bertoort/sugoku.
 
 ## How to run?
 Use:
